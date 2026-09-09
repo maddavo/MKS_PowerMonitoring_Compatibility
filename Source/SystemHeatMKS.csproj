@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>SystemHeatMKS</AssemblyName>
+    <RootNamespace>SystemHeat</RootNamespace>
+    <TargetFramework>net481</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>CS1591</NoWarn>
+    <KSPRoot>C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program</KSPRoot>
+    <KSPModRoot>$(ProjectRootDir)GameData\SystemHeatMKS</KSPModRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp"><HintPath>$(KSPRoot)\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp-firstpass"><HintPath>$(KSPRoot)\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(KSPRoot)\KSP_x64_Data\Managed\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="SystemHeat"><HintPath>..\..\SystemHeat\Source\bin\Release\net481\SystemHeat.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="InstallSystemHeatMKS" AfterTargets="Build">
+    <MakeDir Directories="$(KSPModRoot)\Plugin" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(KSPModRoot)\Plugin" />
+    <Copy SourceFiles="$(ProjectDir)..\GameData\SystemHeatMKS\Patches\MKS.cfg" DestinationFolder="$(KSPModRoot)\Patches" />
+  </Target>
+</Project>
