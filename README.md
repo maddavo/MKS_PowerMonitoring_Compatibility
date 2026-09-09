@@ -1,6 +1,6 @@
 # SystemHeatMKS
 
-SystemHeatMKS is an optional add-on for [SystemHeat](https://github.com/maddavo/SystemHeat) that adds SystemHeat reporting and loop integration for supported MKS/USI parts.
+SystemHeatMKS is an optional add-on for [SystemHeat](https://github.com/KSPModStewards/SystemHeat) that adds SystemHeat reporting and loop integration for supported MKS/USI parts.
 
 It is deliberately separate from SystemHeat core. SystemHeat remains responsible for the heat-loop simulation and user interface; this package supplies the MKS-specific bridge code and ModuleManager configuration.
 
@@ -20,7 +20,7 @@ Stock Convert-O-Trons and stock drills are intentionally not patched here. They 
 
 - Kerbal Space Program 1.11.0–1.12.x; developed against 1.12.5.
 - MKS/USI parts and their normal dependencies.
-- SystemHeat core from the compatible `maddavo/SystemHeat` fork.
+- SystemHeat core from the official [KSPModStewards/SystemHeat](https://github.com/KSPModStewards/SystemHeat) repository.
 - ModuleManager.
 
 The add-on is optional: SystemHeat can run without it, and MKS can run without SystemHeatMKS using its normal thermal modules.
